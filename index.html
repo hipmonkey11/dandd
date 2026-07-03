@@ -5,8 +5,21 @@ body{margin:0;font-family:Arial,sans-serif;background:#0b1730;color:#fff}
 header{padding:70px 20px;text-align:center;background:linear-gradient(135deg,#0b1730,#142850)}
 .logo{width:120px;height:120px;margin:auto}
 .gold{color:#d4af37}.btn{background:#d4af37;color:#0b1730;padding:12px 22px;border-radius:6px;text-decoration:none;font-weight:bold}
-section{padding:50px 20px;max-width:1000px;margin:auto}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-.card{background:#132445;padding:18px;border-radius:10px}
+section{padding:50px 20px;max-width:1000px;margin:auto}.cards{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+
+.card{
+    flex:1 1 250px;
+    max-width:300px;
+    background:#132445;
+    padding:18px;
+    border-radius:10px;
+    box-sizing:border-box;
+}
 footer{text-align:center;padding:20px;background:#08101f;color:#ccc}
 </style></head><body>
 <header>
@@ -36,7 +49,7 @@ footer{text-align:center;padding:20px;background:#08101f;color:#ccc}
 <section id="services">
     <h2>Our Services</h2>
 
-    <div class="">
+    <div class="cards">
 
         <div class="card">
             <h3>Audit & Assurance</h3>
@@ -121,7 +134,7 @@ footer{text-align:center;padding:20px;background:#08101f;color:#ccc}
     </div>
 </section>
 <section id='contact'><h2>Contact</h2>
-<p>Email: your@email.com<br>Phone: +91-XXXXXXXXXX</p>
+<p>Email: tiwarisadhana141@gmail.com<br>Phone: +91-8709986950</p>
 </section>
 <footer>© 2026 D&D Associates. All rights reserved.</footer>
 </body></html>
