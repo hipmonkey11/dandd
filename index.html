@@ -7,6 +7,131 @@ header{padding:70px 20px;text-align:center;background:linear-gradient(135deg,#0b
 .gold{color:#d4af37}.btn{background:#d4af37;color:#0b1730;padding:12px 22px;border-radius:6px;text-decoration:none;font-weight:bold}
 section{padding:50px 20px;max-width:1000px;margin:auto}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
 .card{background:#132445;padding:18px;border-radius:10px}
+
+.money-animation{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:250px;
+    position:relative;
+}
+
+.coin{
+    position:absolute;
+    top:0;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    background:#d4af37;
+    color:#081c3b;
+    font-size:28px;
+    font-weight:bold;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    animation:dropCoin 2.5s infinite ease-in-out;
+    box-shadow:0 0 15px rgba(212,175,55,.6);
+}
+
+.piggy{
+    width:170px;
+    height:110px;
+    background:#d4af37;
+    border-radius:90px;
+    position:relative;
+    animation:bounce 2.5s infinite;
+}
+
+.slot{
+    position:absolute;
+    width:45px;
+    height:8px;
+    background:#081c3b;
+    border-radius:5px;
+    top:18px;
+    left:60px;
+}
+
+.ear{
+    position:absolute;
+    width:25px;
+    height:25px;
+    background:#d4af37;
+    top:-10px;
+    left:25px;
+    transform:rotate(45deg);
+}
+
+.eye{
+    position:absolute;
+    width:8px;
+    height:8px;
+    background:#081c3b;
+    border-radius:50%;
+    top:45px;
+    right:35px;
+}
+
+.leg{
+    width:15px;
+    height:30px;
+    background:#d4af37;
+    position:absolute;
+    bottom:-18px;
+    border-radius:4px;
+}
+
+.leg1{left:35px;}
+.leg2{right:35px;}
+
+@keyframes dropCoin{
+
+0%{
+    transform:translateY(0);
+    opacity:0;
+}
+
+15%{
+    opacity:1;
+}
+
+60%{
+    transform:translateY(90px);
+    opacity:1;
+}
+
+70%{
+    transform:translateY(100px) scale(.5);
+    opacity:0;
+}
+
+100%{
+    transform:translateY(0);
+    opacity:0;
+}
+
+}
+
+@keyframes bounce{
+
+0%,100%{
+    transform:translateY(0);
+}
+
+65%{
+    transform:translateY(6px);
+}
+
+75%{
+    transform:translateY(-4px);
+}
+
+85%{
+    transform:translateY(2px);
+}
+
+}
+    
 #contact a{
     color: #ffffff;
     text-decoration: none;
@@ -35,6 +160,19 @@ footer{text-align:center;padding:20px;background:#08101f;color:#ccc}
 <p>Integrity • Insight • Impact</p>
 <p><em>Precision in Numbers. Excellence in Service.</em></p>
 <a class="btn" href="#founder">Meet the Founder</a>
+
+<section class="money-animation">
+    <div class="coin">₹</div>
+
+    <div class="piggy">
+        <div class="slot"></div>
+        <div class="ear"></div>
+        <div class="eye"></div>
+        <div class="leg leg1"></div>
+        <div class="leg leg2"></div>
+    </div>
+</section>
+
 <section><h2>About Us</h2><p>D&D Associates delivers audit, taxation, GST, accounting, ROC compliance, advisory and financial consulting services with professionalism and integrity.</p></section>
 <section id="founder">
 <div class="card">
