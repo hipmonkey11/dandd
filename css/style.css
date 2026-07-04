@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after{
+    box-sizing:border-box;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -31,9 +37,10 @@ header {
 }
 
 section {
-  padding: 50px 20px;
-  max-width: 1000px;
-  margin: auto;
+  width:100%;
+  max-width:1200px;
+  margin:0 auto;
+  padding:80px 20px;
 }
 
 .cards {
@@ -540,15 +547,12 @@ section {
 }
 
 .founder-container {
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  gap: 60px;
-
-  flex-wrap: wrap;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:center;
+  gap:50px;
+  width:100%;
 }
 
 .founder-image {
@@ -580,9 +584,10 @@ section {
 }
 
 .founder-content {
-  flex: 1.4;
-
-  min-width: 320px;
+    flex:1;
+    min-width:300px;
+    max-width:700px;
+    margin:0 auto;
 }
 
 .founder-content h1 {
