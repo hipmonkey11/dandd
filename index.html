@@ -1,792 +1,1214 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'>
-<title>D&D Associates | Chartered Accountants</title>
-<style>
-body{margin:0;font-family:Arial,sans-serif;background:#0b1730;color:#fff}
-header{padding:70px 20px;text-align:center;background:linear-gradient(135deg,#0b1730,#142850)}
-.logo{width:120px;height:120px;margin:auto}
-.gold{color:#d4af37}.btn{background:#d4af37;color:#0b1730;padding:12px 22px;border-radius:6px;text-decoration:none;font-weight:bold}
-section{padding:50px 20px;max-width:1000px;margin:auto}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-.card{background:#132445;padding:18px;border-radius:10px}
-
-.money-animation{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:250px;
-    position:relative;
-}
-
-.coin{
-    position:absolute;
-    top:0;
-    width:55px;
-    height:55px;
-    border-radius:50%;
-    background:#d4af37;
-    color:#081c3b;
-    font-size:28px;
-    font-weight:bold;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    animation:dropCoin 2.5s infinite ease-in-out;
-    box-shadow:0 0 15px rgba(212,175,55,.6);
-}
-
-.piggy{
-    width:170px;
-    height:110px;
-    background:#d4af37;
-    border-radius:90px;
-    position:relative;
-    animation:bounce 2.5s infinite;
-}
-
-.slot{
-    position:absolute;
-    width:45px;
-    height:8px;
-    background:#081c3b;
-    border-radius:5px;
-    top:18px;
-    left:60px;
-}
-
-.ear{
-    position:absolute;
-    width:25px;
-    height:25px;
-    background:#d4af37;
-    top:-10px;
-    left:25px;
-    transform:rotate(45deg);
-}
-
-.eye{
-    position:absolute;
-    width:8px;
-    height:8px;
-    background:#081c3b;
-    border-radius:50%;
-    top:45px;
-    right:35px;
-}
-
-.leg{
-    width:15px;
-    height:30px;
-    background:#d4af37;
-    position:absolute;
-    bottom:-18px;
-    border-radius:4px;
-}
-
-.leg1{left:35px;}
-.leg2{right:35px;}
-
-@keyframes dropCoin{
-
-0%{
-    transform:translateY(0);
-    opacity:0;
-}
-
-15%{
-    opacity:1;
-}
-
-60%{
-    transform:translateY(90px);
-    opacity:1;
-}
-
-70%{
-    transform:translateY(100px) scale(.5);
-    opacity:0;
-}
-
-100%{
-    transform:translateY(0);
-    opacity:0;
-}
-
-}
-
-@keyframes bounce{
-
-0%,100%{
-    transform:translateY(0);
-}
-
-65%{
-    transform:translateY(6px);
-}
-
-75%{
-    transform:translateY(-4px);
-}
-
-85%{
-    transform:translateY(2px);
-}
-
-}
-
-#services{
-    padding:90px 8%;
-    background:linear-gradient(180deg,#081c3b,#10284d);
-}
-
-#services h2{
-    text-align:center;
-    color:#fff;
-    font-size:42px;
-    margin-bottom:10px;
-    letter-spacing:1px;
-}
-
-#services h2::after{
-    content:"";
-    width:90px;
-    height:4px;
-    background:#d4af37;
-    display:block;
-    margin:18px auto;
-    border-radius:20px;
-}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width,initial-scale=1'>
+    <title>D&D Associates | Chartered Accountants</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0b1730;
+            color: #fff
+        }
+
+        header {
+            padding: 70px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #0b1730, #142850)
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin: auto
+        }
+
+        .gold {
+            color: #d4af37
+        }
+
+        .btn {
+            background: #d4af37;
+            color: #0b1730;
+            padding: 12px 22px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold
+        }
+
+        section {
+            padding: 50px 20px;
+            max-width: 1000px;
+            margin: auto
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px
+        }
+
+        .card {
+            background: #132445;
+            padding: 18px;
+            border-radius: 10px
+        }
+
+        .money-animation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 250px;
+            position: relative;
+        }
+
+        .coin {
+            position: absolute;
+            top: 0;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: #d4af37;
+            color: #081c3b;
+            font-size: 28px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: dropCoin 2.5s infinite ease-in-out;
+            box-shadow: 0 0 15px rgba(212, 175, 55, .6);
+        }
+
+        .piggy {
+            width: 170px;
+            height: 110px;
+            background: #d4af37;
+            border-radius: 90px;
+            position: relative;
+            animation: bounce 2.5s infinite;
+        }
+
+        .slot {
+            position: absolute;
+            width: 45px;
+            height: 8px;
+            background: #081c3b;
+            border-radius: 5px;
+            top: 18px;
+            left: 60px;
+        }
+
+        .ear {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: #d4af37;
+            top: -10px;
+            left: 25px;
+            transform: rotate(45deg);
+        }
+
+        .eye {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #081c3b;
+            border-radius: 50%;
+            top: 45px;
+            right: 35px;
+        }
+
+        .leg {
+            width: 15px;
+            height: 30px;
+            background: #d4af37;
+            position: absolute;
+            bottom: -18px;
+            border-radius: 4px;
+        }
+
+        .leg1 {
+            left: 35px;
+        }
+
+        .leg2 {
+            right: 35px;
+        }
+
+        @keyframes dropCoin {
+
+            0% {
+                transform: translateY(0);
+                opacity: 0;
+            }
+
+            15% {
+                opacity: 1;
+            }
+
+            60% {
+                transform: translateY(90px);
+                opacity: 1;
+            }
+
+            70% {
+                transform: translateY(100px) scale(.5);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 0;
+            }
+
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            65% {
+                transform: translateY(6px);
+            }
+
+            75% {
+                transform: translateY(-4px);
+            }
+
+            85% {
+                transform: translateY(2px);
+            }
+
+        }
+
+        #services {
+            padding: 90px 8%;
+            background: linear-gradient(180deg, #081c3b, #10284d);
+        }
+
+        #services h2 {
+            text-align: center;
+            color: #fff;
+            font-size: 42px;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        #services h2::after {
+            content: "";
+            width: 90px;
+            height: 4px;
+            background: #d4af37;
+            display: block;
+            margin: 18px auto;
+            border-radius: 20px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #bfc8d9;
+            margin-bottom: 60px;
+            font-size: 18px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+        }
 
-.subtitle{
-    text-align:center;
-    color:#bfc8d9;
-    margin-bottom:60px;
-    font-size:18px;
-}
+        .service-card {
+            background: rgba(255, 255, 255, .05);
+            border: 1px solid rgba(255, 255, 255, .08);
+            border-radius: 18px;
+            padding: 30px;
+            transition: all .4s ease;
+            position: relative;
+            overflow: hidden;
+        }
 
-.services-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:28px;
-}
+        .service-card::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 0;
+            height: 4px;
+            background: #d4af37;
+            transition: .4s;
+        }
 
-.service-card{
-    background:rgba(255,255,255,.05);
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:18px;
-    padding:30px;
-    transition:all .4s ease;
-    position:relative;
-    overflow:hidden;
-}
+        .service-card:hover::before {
+            width: 100%;
+        }
 
-.service-card::before{
-    content:"";
-    position:absolute;
-    left:0;
-    top:0;
-    width:0;
-    height:4px;
-    background:#d4af37;
-    transition:.4s;
-}
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: #d4af37;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, .35);
+        }
 
-.service-card:hover::before{
-    width:100%;
-}
+        .service-card h3 {
+            color: #d4af37;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
 
-.service-card:hover{
-    transform:translateY(-10px);
-    border-color:#d4af37;
-    box-shadow:0 20px 40px rgba(0,0,0,.35);
-}
+        .service-card p {
+            color: #d9e1ef;
+            line-height: 1.8;
+            font-size: 15px;
+        }
 
-.service-card h3{
-    color:#d4af37;
-    margin-bottom:15px;
-    font-size:22px;
-}
+        @media(max-width:768px) {
 
-.service-card p{
-    color:#d9e1ef;
-    line-height:1.8;
-    font-size:15px;
-}
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
 
-@media(max-width:768px){
+        }
 
-.services-grid{
-    grid-template-columns:1fr;
-}
+        #contact {
 
-}
-    
-#contact{
+            padding: 80px 8%;
 
-padding:80px 8%;
+            background: #081c3b;
 
-background:#081c3b;
+        }
 
-}
+        #contact h2 {
 
-#contact h2{
+            text-align: center;
 
-text-align:center;
+            font-size: 42px;
 
-font-size:42px;
+            margin-bottom: 15px;
 
-margin-bottom:15px;
+            color: #fff;
 
-color:#fff;
+        }
 
-}
+        .contact-text {
 
-.contact-text{
+            text-align: center;
 
-text-align:center;
+            color: #d5dceb;
 
-color:#d5dceb;
+            margin-bottom: 40px;
 
-margin-bottom:40px;
+        }
 
-}
+        .contact-form {
 
-.contact-form{
+            max-width: 700px;
 
-max-width:700px;
+            margin: auto;
 
-margin:auto;
+            display: flex;
 
-display:flex;
+            flex-direction: column;
 
-flex-direction:column;
+            gap: 20px;
 
-gap:20px;
+        }
 
-}
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select {
 
-.contact-form input,
-.contact-form textarea,
-.contact-form select{
+            padding: 16px;
 
-padding:16px;
+            font-size: 16px;
 
-font-size:16px;
+            border-radius: 10px;
 
-border-radius:10px;
+            border: 1px solid rgba(255, 255, 255, .15);
 
-border:1px solid rgba(255,255,255,.15);
+            background: #132445;
 
-background:#132445;
+            color: white;
 
-color:white;
+            outline: none;
 
-outline:none;
+            transition: .3s;
 
-transition:.3s;
+        }
 
-}
+        .contact-form input:focus,
+        .contact-form textarea:focus,
+        .contact-form select:focus {
 
-.contact-form input:focus,
-.contact-form textarea:focus,
-.contact-form select:focus{
+            border-color: #d4af37;
 
-border-color:#d4af37;
+            box-shadow: 0 0 12px rgba(212, 175, 55, .25);
 
-box-shadow:0 0 12px rgba(212,175,55,.25);
+        }
 
-}
+        .contact-form button {
 
-.contact-form button{
+            padding: 18px;
 
-padding:18px;
+            background: #d4af37;
 
-background:#d4af37;
+            color: #081c3b;
 
-color:#081c3b;
+            border: none;
 
-border:none;
+            border-radius: 10px;
 
-border-radius:10px;
+            font-size: 18px;
 
-font-size:18px;
+            font-weight: bold;
 
-font-weight:bold;
+            cursor: pointer;
 
-cursor:pointer;
+            transition: .3s;
 
-transition:.3s;
+        }
 
-}
+        .contact-form button:hover {
 
-.contact-form button:hover{
+            background: white;
 
-background:white;
+            transform: translateY(-3px);
 
-transform:translateY(-3px);
+        }
 
-}
+        #contact p {
 
-#contact p{
+            text-align: center;
 
-text-align:center;
+            margin-top: 25px;
 
-margin-top:25px;
+        }
 
-}
+        #contact a {
 
-#contact a{
+            color: white;
 
-color:white;
+            text-decoration: none;
 
-text-decoration:none;
+            font-weight: bold;
 
-font-weight:bold;
+        }
 
-}
+        #contact a:hover {
 
-#contact a:hover{
+            color: #d4af37;
 
-color:#d4af37;
+        }
 
-}
+        .btn:hover {
 
-.btn:hover{
+            transform: translateY(-5px);
 
-transform:translateY(-5px);
+            box-shadow: 0 12px 30px rgba(212, 175, 55, .35);
 
-box-shadow:0 12px 30px rgba(212,175,55,.35);
+            background: white;
 
-background:white;
+        }
 
-}
-    
-.navbar{
+        .navbar {
 
-position:fixed;
+            position: fixed;
 
-top:0;
+            top: 0;
 
-left:0;
+            left: 0;
 
-width:100%;
+            width: 100%;
 
-padding:18px 7%;
+            padding: 18px 7%;
 
-display:flex;
+            display: flex;
 
-justify-content:space-between;
+            justify-content: space-between;
 
-align-items:center;
+            align-items: center;
 
-background:rgba(8,28,59,.82);
+            background: rgba(8, 28, 59, .82);
 
-backdrop-filter:blur(18px);
+            backdrop-filter: blur(18px);
 
-border-bottom:1px solid rgba(255,255,255,.08);
+            border-bottom: 1px solid rgba(255, 255, 255, .08);
 
-z-index:9999;
+            z-index: 9999;
 
-box-sizing:border-box;
+            box-sizing: border-box;
 
-}
+        }
 
-.logo-text{
+        .logo-text {
 
-font-size:28px;
+            font-size: 28px;
 
-font-weight:700;
+            font-weight: 700;
 
-color:white;
+            color: white;
 
-letter-spacing:1px;
+            letter-spacing: 1px;
 
-}
+        }
 
-.logo-text span{
+        .logo-text span {
 
-color:#d4af37;
+            color: #d4af37;
 
-}
+        }
 
-.nav-links{
+        .nav-links {
 
-display:flex;
+            display: flex;
 
-gap:35px;
+            gap: 35px;
 
-list-style:none;
+            list-style: none;
 
-margin:0;
+            margin: 0;
 
-padding:0;
+            padding: 0;
 
-}
+        }
 
-.menu-toggle{
-    display:none;
-}
+        .menu-toggle {
+            display: none;
+        }
 
 
-.nav-links a{
+        .nav-links a {
 
-color:white;
+            color: white;
 
-text-decoration:none;
+            text-decoration: none;
 
-font-weight:600;
+            font-weight: 600;
 
-transition:.3s;
+            transition: .3s;
 
-position:relative;
+            position: relative;
 
-}
+        }
 
-.nav-links a::after{
+        .nav-links a::after {
 
-content:"";
+            content: "";
 
-position:absolute;
+            position: absolute;
 
-bottom:-8px;
+            bottom: -8px;
 
-left:0;
+            left: 0;
 
-width:0;
+            width: 0;
 
-height:2px;
+            height: 2px;
 
-background:#d4af37;
+            background: #d4af37;
 
-transition:.3s;
+            transition: .3s;
 
-}
+        }
 
-.nav-links a:hover{
+        .nav-links a:hover {
 
-color:#d4af37;
+            color: #d4af37;
 
-}
+        }
 
-.nav-links a:hover::after{
+        .nav-links a:hover::after {
 
-width:100%;
+            width: 100%;
 
-}
+        }
 
-@media(max-width:768px){
+        @media(max-width:768px) {
 
-.nav-links{
+            .nav-links {
 
-position:fixed;
+                position: fixed;
 
-top:70px;
+                top: 70px;
 
-right:0;
+                right: 0;
 
-width:240px;
+                width: 240px;
 
-height:auto;
+                height: auto;
 
-flex-direction:column;
+                flex-direction: column;
 
-gap:14px;
+                gap: 14px;
 
-padding:18px;
+                padding: 18px;
 
-background:rgba(8,28,59,.95);
+                background: rgba(8, 28, 59, .95);
 
-border:1px solid rgba(255,255,255,.08);
+                border: 1px solid rgba(255, 255, 255, .08);
 
-border-radius:14px;
+                border-radius: 14px;
 
-transform:translateX(110%);
+                transform: translateX(110%);
 
-transition:.25s ease;
+                transition: .25s ease;
 
-}
+            }
 
 
-.nav-links.active{
+            .nav-links.active {
 
-transform:translateX(0);
+                transform: translateX(0);
 
-}
+            }
 
 
-.menu-toggle{
+            .menu-toggle {
 
-display:block;
+                display: block;
 
-}
+            }
 
-}
+        }
 
-html{
+        #founder {
 
-scroll-behavior:smooth;
+            padding: 90px 8%;
 
-}
+        }
 
-footer{text-align:center;padding:20px;background:#08101f;color:#ccc}
-</style></head><body>
+        .section-title {
 
-<nav class="navbar">
+            text-align: center;
 
-    <div class="logo-text">
-        D<span>&</span>D Associates
-    </div>
-    <div class="menu-toggle" id="menuToggle">
-        ☰
-    </div>
-    <ul class="nav-links" id="navLinks">
+            font-size: 42px;
 
-        <li><a href="#">Home</a></li>
+            margin-bottom: 60px;
 
-        <li><a href="#about">About</a></li>
+            color: white;
 
-        <li><a href="#founder">Founder</a></li>
+        }
 
-        <li><a href="#services">Services</a></li>
+        .section-title::after {
 
-        <li><a href="#contact">Contact</a></li>
+            content: "";
 
-    </ul>
+            display: block;
 
-</nav>
-    
-<header>
-<svg class="logo" viewBox="0 0 200 200">
-<circle cx="100" cy="100" r="92" fill="none" stroke="#D4AF37" stroke-width="6"/>
-<path d="M60 140V70M100 140V50M140 140V85" stroke="#D4AF37" stroke-width="8" stroke-linecap="round"/>
-<path d="M50 120 L100 70 L150 95" fill="none" stroke="#D4AF37" stroke-width="5"/>
-<text x="100" y="175" text-anchor="middle" fill="#D4AF37" font-size="18" font-weight="700">D&amp;D</text>
-</svg>
-<h1>D<span class='gold'>&</span>D Associates</h1><h2>Chartered Accountants</h2>
-<p>Integrity • Insight • Impact</p>
-<p><em>Precision in Numbers. Excellence in Service.</em></p>
-<a class='btn' href='#contact'>Book a Consultation</a>
-</header>
-<section class="money-animation">
-    <div class="coin">₹</div>
+            width: 90px;
 
-    <div class="piggy">
-        <div class="slot"></div>
-        <div class="ear"></div>
-        <div class="eye"></div>
-        <div class="leg leg1"></div>
-        <div class="leg leg2"></div>
-    </div>
-</section>
+            height: 4px;
 
-<section id="about"><h2>About Us</h2><p>D&D Associates delivers audit, taxation, GST, accounting, ROC compliance, advisory and financial consulting services with professionalism and integrity.</p></section>
-<section id="founder">
-<div class="card">
-<h2>Meet the Founder</h2>
-<h1 class="gold">CA Sadhana Kumari</h1>
-<p>Representing a new generation of Chartered Accountants, <strong>CA Sadhana Kumari</strong> brings together academic excellence, professionalism, and a client-first approach. She is committed to helping individuals, startups, and businesses navigate taxation, audit, compliance, and financial decision-making with clarity and integrity.</p>
+            background: #d4af37;
 
-<p>Her journey began at <strong>Kendriya Vidyalaya No. 2, Gaya</strong>, where she built a strong academic foundation. She later graduated from the <strong>University of Delhi</strong> before earning the prestigious Chartered Accountant qualification. Through D&amp;D Associates, her vision is to deliver dependable, ethical, and practical financial solutions while building lasting relationships based on trust and excellence.</p>
+            margin: 18px auto;
 
-<h3>Professional Philosophy</h3>
-<p><em>"Every financial decision should create confidence, every compliance should build trust, and every client relationship should last beyond numbers."</em></p>
-</div>
-</section>
+            border-radius: 20px;
 
-<section id="services">
+        }
 
-    <h2>Our Services</h2>
+        .founder-container {
 
-    <p class="subtitle">
-        Comprehensive Chartered Accountancy, Taxation & Business Advisory Services
-    </p>
+            display: flex;
 
-    <div class="services-grid">
+            align-items: center;
 
-        <div class="service-card">
-            <h3>Audit & Assurance</h3>
-            <p>Statutory Audit, Internal Audit, Tax Audit, Bank Audit and Assurance Services.</p>
+            justify-content: space-between;
+
+            gap: 60px;
+
+            flex-wrap: wrap;
+
+        }
+
+        .founder-image {
+
+            flex: 1;
+
+            text-align: center;
+
+            min-width: 280px;
+
+        }
+
+        .founder-image img {
+
+            width: 340px;
+
+            height: 420px;
+
+            object-fit: cover;
+
+            border-radius: 20px;
+
+            border: 4px solid #d4af37;
+
+            box-shadow: 0 25px 60px rgba(0, 0, 0, .35);
+
+            transition: .4s;
+
+        }
+
+        .founder-image img:hover {
+
+            transform: scale(1.04);
+
+        }
+
+        .founder-content {
+
+            flex: 1.4;
+
+            min-width: 320px;
+
+        }
+
+        .founder-content h1 {
+
+            font-size: 42px;
+
+            margin-bottom: 20px;
+
+        }
+
+        .founder-content p {
+
+            line-height: 1.9;
+
+            color: #d8e2ef;
+
+            margin-bottom: 20px;
+
+        }
+
+        .founder-highlights {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+            gap: 20px;
+
+            margin: 35px 0;
+
+        }
+
+        .founder-highlights div {
+
+            background: rgba(255, 255, 255, .05);
+
+            padding: 20px;
+
+            border-radius: 15px;
+
+            border-left: 4px solid #d4af37;
+
+        }
+
+        .founder-highlights h3 {
+
+            color: #d4af37;
+
+            margin-bottom: 10px;
+
+        }
+
+        blockquote {
+
+            font-style: italic;
+
+            font-size: 18px;
+
+            padding-left: 20px;
+
+            border-left: 4px solid #d4af37;
+
+            color: #ffffff;
+
+            margin-top: 30px;
+
+        }
+
+        @media(max-width:900px) {
+
+            .founder-container {
+
+                flex-direction: column;
+
+                text-align: center;
+
+            }
+
+            .founder-image img {
+
+                width: 280px;
+
+                height: 350px;
+
+            }
+
+            blockquote {
+
+                border-left: none;
+
+                border-top: 4px solid #d4af37;
+
+                padding-top: 20px;
+
+                padding-left: 0;
+
+            }
+
+        }
+
+        .growth-chart {
+
+            position: relative;
+
+            width: 340px;
+
+            height: 160px;
+
+            margin: 50px auto;
+
+        }
+
+        .line {
+
+            position: absolute;
+
+            left: 10px;
+
+            bottom: 20px;
+
+            width: 300px;
+
+            height: 4px;
+
+            background: #d4af37;
+
+            transform-origin: left;
+
+            transform: rotate(-22deg);
+
+            animation: growLine 2.8s ease forwards;
+
+        }
+
+        .dot {
+
+            position: absolute;
+
+            width: 14px;
+
+            height: 14px;
+
+            background: #d4af37;
+
+            border-radius: 50%;
+
+            opacity: 0;
+
+            animation: appear .4s forwards;
+
+        }
+
+        .d1 {
+            left: 10px;
+            bottom: 20px;
+            animation-delay: .3s;
+        }
+
+        .d2 {
+            left: 80px;
+            bottom: 45px;
+            animation-delay: .6s;
+        }
+
+        .d3 {
+            left: 150px;
+            bottom: 75px;
+            animation-delay: .9s;
+        }
+
+        .d4 {
+            left: 220px;
+            bottom: 105px;
+            animation-delay: 1.2s;
+        }
+
+        .d5 {
+
+            left: 300px;
+
+            bottom: 135px;
+
+            animation-delay: 1.5s;
+
+            box-shadow: 0 0 20px #d4af37;
+
+        }
+
+        @keyframes appear {
+
+            to {
+
+                opacity: 1;
+
+                transform: scale(1.2);
+
+            }
+
+        }
+
+        @keyframes growLine {
+
+            from {
+
+                width: 0;
+
+            }
+
+            to {
+
+                width: 300px;
+
+            }
+
+        }
+
+        header h1 {
+
+            animation: titleGlow 4s ease-in-out infinite;
+
+        }
+
+        @keyframes titleGlow {
+
+            0%,
+            100% {
+
+                text-shadow: 0 0 8px rgba(212, 175, 55, .2);
+
+            }
+
+            50% {
+
+                text-shadow:
+
+                    0 0 20px rgba(212, 175, 55, .7),
+
+                    0 0 35px rgba(212, 175, 55, .4);
+
+            }
+
+        }
+
+        html {
+
+            scroll-behavior: smooth;
+
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #08101f;
+            color: #ccc
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo-text">
+            D<span>&</span>D Associates
+        </div>
+        <div class="menu-toggle" id="menuToggle">
+            ☰
+        </div>
+        <ul class="nav-links" id="navLinks">
+
+            <li><a href="#">Home</a></li>
+
+            <li><a href="#about">About</a></li>
+
+            <li><a href="#founder">Founder</a></li>
+
+            <li><a href="#services">Services</a></li>
+
+            <li><a href="#contact">Contact</a></li>
+
+        </ul>
+
+    </nav>
+
+    <header>
+        <svg class="logo" viewBox="0 0 200 200">
+            <circle cx="100" cy="100" r="92" fill="none" stroke="#D4AF37" stroke-width="6" />
+            <path d="M60 140V70M100 140V50M140 140V85" stroke="#D4AF37" stroke-width="8" stroke-linecap="round" />
+            <path d="M50 120 L100 70 L150 95" fill="none" stroke="#D4AF37" stroke-width="5" />
+            <text x="100" y="175" text-anchor="middle" fill="#D4AF37" font-size="18" font-weight="700">D&amp;D</text>
+        </svg>
+        <h1>D<span class='gold'>&</span>D Associates</h1>
+        <h2>Chartered Accountants</h2>
+        <p>Integrity • Insight • Impact</p>
+        <p><em>Precision in Numbers. Excellence in Service.</em></p>
+        <a class='btn' href='#contact'>Book a Consultation</a>
+    </header>
+    <section class="money-animation">
+        <div class="coin">₹</div>
+
+        <div class="piggy">
+            <div class="slot"></div>
+            <div class="ear"></div>
+            <div class="eye"></div>
+            <div class="leg leg1"></div>
+            <div class="leg leg2"></div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>D&D Associates delivers audit, taxation, GST, accounting, ROC compliance, advisory and financial consulting
+            services with professionalism and integrity.</p>
+        <div class="growth-chart">
+
+            <div class="line"></div>
+
+            <div class="dot d1"></div>
+
+            <div class="dot d2"></div>
+
+            <div class="dot d3"></div>
+
+            <div class="dot d4"></div>
+
+            <div class="dot d5"></div>
+
+        </div>
+    </section>
+    <section id="founder">
+        <h2>Meet the Founder</h2>
+        <div class="card">
+            <div class="founder-container">
+
+                <div class="founder-image">
+
+                    <img src="images/founder.jpeg" alt="CA Sadhana Kumari">
+
+                </div>
+
+                <div class="founder-content">
+                    <h1 class="gold">CA Sadhana Kumari</h1>
+                    <p>Representing a new generation of Chartered Accountants, <strong>CA Sadhana Kumari</strong> brings
+                        together academic excellence, professionalism, and a client-first approach. She is committed to
+                        helping individuals, startups, and businesses navigate taxation, audit, compliance, and
+                        financial decision-making with clarity and integrity.</p>
+
+                    <p>Her journey began at <strong>Kendriya Vidyalaya No. 2, Gaya</strong>, where she built a strong
+                        academic foundation. She later graduated from the <strong>University of Delhi</strong> before
+                        earning the prestigious Chartered Accountant qualification. Through D&amp;D Associates, her
+                        vision is to deliver dependable, ethical, and practical financial solutions while building
+                        lasting relationships based on trust and excellence.</p>
+
+                    <h3>Professional Philosophy</h3>
+                    <blockquote>"Every financial decision should create confidence, every compliance should build trust,
+                        and every client relationship should last beyond numbers."</blockquote>
+                </div>
+
+            </div>
+    </section>
+
+    <section id="services">
+
+        <h2>Our Services</h2>
+
+        <p class="subtitle">
+            Comprehensive Chartered Accountancy, Taxation & Business Advisory Services
+        </p>
+
+        <div class="services-grid">
+
+            <div class="service-card">
+                <h3>Audit & Assurance</h3>
+                <p>Statutory Audit, Internal Audit, Tax Audit, Bank Audit and Assurance Services.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Income Tax Services</h3>
+                <p>Income Tax Return Filing, Tax Planning, Tax Compliance and Notice Handling.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>GST Registration</h3>
+                <p>GST Registration, Amendment, Cancellation and Complete GST Consultancy.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>GSTR-1 Filing</h3>
+                <p>Preparation and timely filing of GSTR-1 returns.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>GSTR-3B Filing</h3>
+                <p>Monthly GST return preparation and filing with complete compliance.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>TDS Return Filing</h3>
+                <p>Quarterly TDS return filing, correction and reconciliation services.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Accounting & Bookkeeping</h3>
+                <p>Professional bookkeeping, accounting, financial statements and MIS reporting.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>MSME (Udyam) Registration</h3>
+                <p>MSME/Udyam Certificate generation and registration assistance.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Turnover Certificate</h3>
+                <p>Professional certification for banks, tenders and statutory requirements.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Partnership Formation & Dissolution</h3>
+                <p>Drafting, registration, restructuring and dissolution of partnership firms.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Transfer Pricing Study Report</h3>
+                <p>Transfer Pricing documentation, benchmarking and compliance reports.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Reply to Litigation Notices</h3>
+                <p>Professional drafting and response to Income Tax, GST and statutory notices.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>ROC Compliance</h3>
+                <p>Annual ROC Filings, Director KYC, Company Compliance and Secretarial Services.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Business Registration</h3>
+                <p>Company, LLP, Partnership, Trust, Society and Proprietorship Registration.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Aadhaar–PAN Linking</h3>
+                <p>Assistance with Aadhaar-PAN linking and PAN-related compliance services.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Virtual CFO Services</h3>
+                <p>Financial Planning, Budgeting, MIS Reports, Cash Flow Management and Strategic Advisory.</p>
+            </div>
+
         </div>
 
-        <div class="service-card">
-            <h3>Income Tax Services</h3>
-            <p>Income Tax Return Filing, Tax Planning, Tax Compliance and Notice Handling.</p>
-        </div>
+    </section>
+    <section id="contact">
 
-        <div class="service-card">
-            <h3>GST Registration</h3>
-            <p>GST Registration, Amendment, Cancellation and Complete GST Consultancy.</p>
-        </div>
+        <h2>Contact Us</h2>
 
-        <div class="service-card">
-            <h3>GSTR-1 Filing</h3>
-            <p>Preparation and timely filing of GSTR-1 returns.</p>
-        </div>
+        <p class="contact-text">
+            Have a query? Fill out the form below and we'll get back to you shortly.
+        </p>
 
-        <div class="service-card">
-            <h3>GSTR-3B Filing</h3>
-            <p>Monthly GST return preparation and filing with complete compliance.</p>
-        </div>
+        <form action="https://formsubmit.co/info.danddassociates@gmail.com" method="POST" class="contact-form">
 
-        <div class="service-card">
-            <h3>TDS Return Filing</h3>
-            <p>Quarterly TDS return filing, correction and reconciliation services.</p>
-        </div>
+            <input type="hidden" name="_subject" value="New Client Enquiry - D&D Associates">
 
-        <div class="service-card">
-            <h3>Accounting & Bookkeeping</h3>
-            <p>Professional bookkeeping, accounting, financial statements and MIS reporting.</p>
-        </div>
+            <input type="hidden" name="_captcha" value="false">
 
-        <div class="service-card">
-            <h3>MSME (Udyam) Registration</h3>
-            <p>MSME/Udyam Certificate generation and registration assistance.</p>
-        </div>
+            <input type="hidden" name="_template" value="table">
 
-        <div class="service-card">
-            <h3>Turnover Certificate</h3>
-            <p>Professional certification for banks, tenders and statutory requirements.</p>
-        </div>
+            <input type="text" name="Name" placeholder="Full Name" required>
 
-        <div class="service-card">
-            <h3>Partnership Formation & Dissolution</h3>
-            <p>Drafting, registration, restructuring and dissolution of partnership firms.</p>
-        </div>
+            <input type="email" name="Email" placeholder="Email Address" required>
 
-        <div class="service-card">
-            <h3>Transfer Pricing Study Report</h3>
-            <p>Transfer Pricing documentation, benchmarking and compliance reports.</p>
-        </div>
+            <input type="tel" name="Phone" placeholder="Mobile Number" required>
 
-        <div class="service-card">
-            <h3>Reply to Litigation Notices</h3>
-            <p>Professional drafting and response to Income Tax, GST and statutory notices.</p>
-        </div>
+            <select name="Service Required" required>
 
-        <div class="service-card">
-            <h3>ROC Compliance</h3>
-            <p>Annual ROC Filings, Director KYC, Company Compliance and Secretarial Services.</p>
-        </div>
+                <option value="">Select Required Service</option>
 
-        <div class="service-card">
-            <h3>Business Registration</h3>
-            <p>Company, LLP, Partnership, Trust, Society and Proprietorship Registration.</p>
-        </div>
+                <option>Audit & Assurance</option>
+                <option>Income Tax Services</option>
+                <option>GST Registration</option>
+                <option>GSTR-1 Filing</option>
+                <option>GSTR-3B Filing</option>
+                <option>TDS Return Filing</option>
+                <option>Accounting & Bookkeeping</option>
+                <option>MSME Registration</option>
+                <option>Turnover Certificate</option>
+                <option>Partnership Formation / Dissolution</option>
+                <option>Transfer Pricing Study Report</option>
+                <option>ROC Compliance</option>
+                <option>Business Registration</option>
+                <option>Virtual CFO Services</option>
+                <option>Aadhaar-PAN Linking</option>
+                <option>Other</option>
 
-        <div class="service-card">
-            <h3>Aadhaar–PAN Linking</h3>
-            <p>Assistance with Aadhaar-PAN linking and PAN-related compliance services.</p>
-        </div>
+            </select>
 
-        <div class="service-card">
-            <h3>Virtual CFO Services</h3>
-            <p>Financial Planning, Budgeting, MIS Reports, Cash Flow Management and Strategic Advisory.</p>
-        </div>
+            <textarea name="Requirement" rows="6" placeholder="Describe your requirement..." required></textarea>
 
-    </div>
+            <button type="submit">
+                Submit Requirement
+            </button>
 
-</section>
-<section id="contact">
+        </form>
 
-    <h2>Contact Us</h2>
+        <br>
 
-    <p class="contact-text">
-        Have a query? Fill out the form below and we'll get back to you shortly.
-    </p>
+        <p>Email:
+            <a href="mailto:tiwarisadhana141@gmail.com">
+                tiwarisadhana141@gmail.com
+            </a>
+        </p>
 
-    <form action="https://formsubmit.co/info.danddassociates@gmail.com" method="POST" class="contact-form">
+        <p>Phone:
+            <a href="tel:+918709986950">
+                +91 8709986950
+            </a>
+        </p>
 
-        <input type="hidden" name="_subject" value="New Client Enquiry - D&D Associates">
-
-        <input type="hidden" name="_captcha" value="false">
-
-        <input type="hidden" name="_template" value="table">
-
-        <input type="text"
-               name="Name"
-               placeholder="Full Name"
-               required>
-
-        <input type="email"
-               name="Email"
-               placeholder="Email Address"
-               required>
-
-        <input type="tel"
-               name="Phone"
-               placeholder="Mobile Number"
-               required>
-
-        <select name="Service Required" required>
-
-            <option value="">Select Required Service</option>
-
-            <option>Audit & Assurance</option>
-            <option>Income Tax Services</option>
-            <option>GST Registration</option>
-            <option>GSTR-1 Filing</option>
-            <option>GSTR-3B Filing</option>
-            <option>TDS Return Filing</option>
-            <option>Accounting & Bookkeeping</option>
-            <option>MSME Registration</option>
-            <option>Turnover Certificate</option>
-            <option>Partnership Formation / Dissolution</option>
-            <option>Transfer Pricing Study Report</option>
-            <option>ROC Compliance</option>
-            <option>Business Registration</option>
-            <option>Virtual CFO Services</option>
-            <option>Aadhaar-PAN Linking</option>
-            <option>Other</option>
-
-        </select>
-
-        <textarea
-            name="Requirement"
-            rows="6"
-            placeholder="Describe your requirement..."
-            required></textarea>
-
-        <button type="submit">
-            Submit Requirement
-        </button>
-
-    </form>
-
-    <br>
-
-    <p>Email:
-        <a href="mailto:tiwarisadhana141@gmail.com">
-            tiwarisadhana141@gmail.com
-        </a>
-    </p>
-
-    <p>Phone:
-        <a href="tel:+918709986950">
-            +91 8709986950
-        </a>
-    </p>
-
-</section>
-<footer>© 2026 D&D Associates. All rights reserved.</footer>
+    </section>
+    <footer>© 2026 D&D Associates. All rights reserved.</footer>
 </body>
 <script>
 
-const menu=document.getElementById("menuToggle");
-const nav=document.getElementById("navLinks");
+    const menu = document.getElementById("menuToggle");
+    const nav = document.getElementById("navLinks");
 
-menu.onclick=function(){
+    menu.onclick = function () {
 
-nav.classList.toggle("active");
+        nav.classList.toggle("active");
 
-}
+    }
 
-document.querySelectorAll(".nav-links a").forEach(link=>{
+    document.querySelectorAll(".nav-links a").forEach(link => {
 
-link.onclick=function(){
+        link.onclick = function () {
 
-nav.classList.remove("active");
+            nav.classList.remove("active");
 
-}
+        }
 
-});
+    });
 
 </script>
+
 </html>
