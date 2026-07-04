@@ -644,28 +644,73 @@ blockquote {
   margin-top: 30px;
 }
 
-@media (max-width: 900px) {
-  .founder-container {
-    flex-direction: column;
+@media (max-width:900px){
 
-    text-align: center;
-  }
+#founder{
+    padding:60px 18px;
+}
 
-  .founder-image img {
-    width: 280px;
+.founder-container{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:35px;
+}
 
-    height: 350px;
-  }
+.founder-image{
+    width:100%;
+    text-align:center;
+}
 
-  blockquote {
-    border-left: none;
+.founder-image img{
+    width:260px;
+    height:auto;
+    max-width:100%;
+}
 
-    border-top: 4px solid #d4af37;
+.founder-content{
+    width:100%;
+    max-width:100%;
+    min-width:0;
+    margin:0;
+    padding:0;
+}
 
-    padding-top: 20px;
+.founder-content h1{
+    font-size:40px;
+    text-align:center;
+    line-height:1.2;
+}
 
-    padding-left: 0;
-  }
+.founder-content p{
+    text-align:left;
+    font-size:17px;
+    line-height:1.8;
+}
+
+.founder-content h3{
+    text-align:left;
+}
+
+blockquote{
+    text-align:left;
+    border-left:4px solid #d4af37;
+    border-top:none;
+    padding-left:18px;
+    padding-top:0;
+    margin-top:25px;
+}
+}
+.founder-card{
+    background:#132445;
+    border-radius:20px;
+    padding:40px;
+}
+
+@media(max-width:900px){
+    .founder-card{
+        padding:25px 18px;
+    }
 }
 .growth-chart{
 
