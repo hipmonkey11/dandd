@@ -471,7 +471,9 @@ width:100%;
 
 .nav-links{
 
-display:none;
+.menu-toggle{
+
+display:block;
 
 }
 
@@ -491,8 +493,10 @@ footer{text-align:center;padding:20px;background:#08101f;color:#ccc}
     <div class="logo-text">
         D<span>&</span>D Associates
     </div>
-
-    <ul class="nav-links">
+    <div class="menu-toggle" id="menuToggle">
+        ☰
+    </div>
+    <ul class="nav-links" id="navLinks">
 
         <li><a href="#">Home</a></li>
 
@@ -721,4 +725,27 @@ footer{text-align:center;padding:20px;background:#08101f;color:#ccc}
 
 </section>
 <footer>© 2026 D&D Associates. All rights reserved.</footer>
-</body></html>
+</body>
+<script>
+
+const menu=document.getElementById("menuToggle");
+const nav=document.getElementById("navLinks");
+
+menu.onclick=function(){
+
+nav.classList.toggle("active");
+
+}
+
+document.querySelectorAll(".nav-links a").forEach(link=>{
+
+link.onclick=function(){
+
+nav.classList.remove("active");
+
+}
+
+});
+
+</script>
+</html>
