@@ -421,6 +421,11 @@ padding:0;
 
 }
 
+.menu-toggle{
+    display:none;
+}
+
+
 .nav-links a{
 
 color:white;
@@ -470,6 +475,42 @@ width:100%;
 @media(max-width:768px){
 
 .nav-links{
+
+position:fixed;
+
+top:70px;
+
+right:0;
+
+width:240px;
+
+height:auto;
+
+flex-direction:column;
+
+gap:14px;
+
+padding:18px;
+
+background:rgba(8,28,59,.95);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:14px;
+
+transform:translateX(110%);
+
+transition:.25s ease;
+
+}
+
+
+.nav-links.active{
+
+transform:translateX(0);
+
+}
+
 
 .menu-toggle{
 
@@ -536,7 +577,7 @@ footer{text-align:center;padding:20px;background:#08101f;color:#ccc}
     </div>
 </section>
 
-<section><h2>About Us</h2><p>D&D Associates delivers audit, taxation, GST, accounting, ROC compliance, advisory and financial consulting services with professionalism and integrity.</p></section>
+<section id="about"><h2>About Us</h2><p>D&D Associates delivers audit, taxation, GST, accounting, ROC compliance, advisory and financial consulting services with professionalism and integrity.</p></section>
 <section id="founder">
 <div class="card">
 <h2>Meet the Founder</h2>
